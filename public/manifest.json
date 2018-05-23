@@ -1,6 +1,5 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "name": "Minesweeper",
   "icons": [
     {
       "src": "favicon.ico",
