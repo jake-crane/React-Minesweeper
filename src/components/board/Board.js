@@ -102,7 +102,21 @@ export default class Board extends Component {
     onCellClick(row, col) {
         this.checkandReveal(row, col);
     }
+    reset() {
+        this.initBoard();
+        this.setState({gameOver: false});
+    }
     render() {
-        return (<div>{this.state.board.map((row, i) => <Row key={i} data={row} onCellClick={this.onCellClick.bind(this, i)}></Row>)}</div>);
+        return (
+        <div>
+            {this.state.board.map((row, i) => <Row key={i} data={row} onCellClick={this.onCellClick.bind(this, i)}></Row>)}
+            {this.state.gameOver && 
+                <div>
+                    <div>Game Over</div>
+                    <button onClick={this.reset.bind(this)}>Play Again</button>
+                    </div>
+            }
+        </div>
+        );
     }
 }
